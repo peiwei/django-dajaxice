@@ -42,6 +42,7 @@ var Dajaxice = {
         send_data = send_data.join('&');
         var oXMLHttpRequest = new XMLHttpRequest;
         oXMLHttpRequest.open('POST', '/{{DAJAXICE_URL_PREFIX}}/'+dajaxice_function+'/');
+        oXMLHttpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         oXMLHttpRequest.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         oXMLHttpRequest.setRequestHeader("X-CSRFToken",Dajaxice.get_cookie('csrftoken'));
         oXMLHttpRequest.onreadystatechange = function() {
