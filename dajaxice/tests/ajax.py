@@ -31,7 +31,7 @@
 #  DAMAGE.
 #----------------------------------------------------------------------
 
-from django.utils import simplejson
+import json
 from dajaxice.core import dajaxice_functions
 
 
@@ -41,7 +41,7 @@ dajaxice_functions.register(test_registered_function)
 
 
 def test_string(request):
-    return simplejson.dumps({'string': 'hello world'})
+    return json.dumps({'string': 'hello world'})
 dajaxice_functions.register(test_string)
 
 
@@ -52,10 +52,10 @@ dajaxice_functions.register(test_ajax_exception)
 
 
 def test_foo(request):
-    return simplejson.dumps({'foo': 'bar'})
+    return json.dumps({'foo': 'bar'})
 dajaxice_functions.register(test_foo)
 
 
 def test_foo_with_params(request, param1):
-    return simplejson.dumps({'param1': param1})
+    return json.dumps({'param1': param1})
 dajaxice_functions.register(test_foo_with_params)

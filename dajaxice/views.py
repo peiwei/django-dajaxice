@@ -59,4 +59,4 @@ def js_core(request):
             'DAJAXICE_EXCEPTION': DajaxiceRequest.get_exception_message(),
             'DAJAXICE_JS_DOCSTRINGS': DajaxiceRequest.get_js_docstrings()}
 
-    return render_to_response('dajaxice/dajaxice.core.js', data, mimetype="text/javascript")
+    return render_to_response('dajaxice/dajaxice.core.js', data, content_type="text/javascript")
