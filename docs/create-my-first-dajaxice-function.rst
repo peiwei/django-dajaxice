@@ -7,22 +7,22 @@ Create a file named ``ajax.py`` inside any django app. For example ``example/aja
 
 Inside this file create as many as your want ajax functions.::
 
-	from django.utils import simplejson
+	import json
 	from dajaxice.core import dajaxice_functions
 
 	def myexample(request):
-            return simplejson.dumps({'message':'Hello World'})
+            return json.dumps({'message':'Hello World'})
 
 	dajaxice_functions.register(myexample)
 
 You can also register the dajaxice function using the ``dajaxice_register`` decorator.::
 
-	from django.utils import simplejson
+	from django.utils import json
 	from dajaxice.decorators import dajaxice_register
 
 	@dajaxice_register
 	def myexample(request):
-            return simplejson.dumps({'message':'Hello World'})
+            return json.dumps({'message':'Hello World'})
 
 Invoque it from your JS
 ---------------------------
